@@ -5,11 +5,7 @@
   "main": "lib/react-mobile-picker.js",
   "repository": {
     "type": "git",
-    "url": "adcentury/react-mobile-picker"
-  },
-  "dependencies": {
-    "react": "^0.14.3",
-    "react-dom": "~0.14.7"
+    "url": "by-healthFED/react-mobile-picker"
   },
   "files": [
     "LICENCE",
@@ -43,6 +39,8 @@
     "express": "^4.13.3",
     "less": "^2.5.3",
     "less-loader": "^2.2.2",
+    "react": "^15.5.3",
+    "react-dom": "^15.5.3",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
     "redbox-react": "^1.2.0",
@@ -52,6 +50,10 @@
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0"
   },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0",
+    "react-dom": "^0.14.0 || ^15.0.0"
+  },
   "scripts": {
     "clean": "rimraf lib",
     "start": "node examples/server.js",
@@ -59,9 +61,9 @@
     "build-examples": "rimraf examples/dist && eslint examples && set NODE_ENV=production && webpack --progress --hide-modules --config examples/webpack.build.js",
     "build": "npm run clean && npm run lint && set NODE_ENV=production && webpack --progress --hide-modules --config webpack.build.js"
   },
-  "author": {
-    "name": "Lei Lei",
-    "email": "adcentury100@gmail.com"
-  },
+  "contributors": [
+    "pengxp <pengxp@by-health.com",
+    "Lei Lei <adcentury100@gmail.com>"
+  ],
   "license": "MIT"
 }
