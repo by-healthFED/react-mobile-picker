@@ -34,7 +34,7 @@ class PickerColumn extends React.Component {
   computeTranslate = (props) => {
     const { options, value, itemHeight, columnHeight } = props;
 
-    let selectedIndex = findIndex(options, item => item.value === value);
+    let selectedIndex = findIndex(options, (item) => item.value === value);
     if (selectedIndex < 0) {
       if (options.length) {
         // throw new ReferenceError();

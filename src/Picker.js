@@ -30,7 +30,7 @@ class Picker extends React.Component {
 
     for (let name in optionGroups) {
       if (Object.prototype.hasOwnProperty.call(optionGroups, name)) {
-        state.optionGroups[name] = optionGroups[name].map(item => (
+        state.optionGroups[name] = optionGroups[name].map((item) => (
           typeof item === 'string' ? { text: item, value: item } : item
         ));
       }
