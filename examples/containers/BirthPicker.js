@@ -1,10 +1,13 @@
 import React, {Component, PropTypes} from 'react';
 import Picker from 'react-mobile-picker';
 
-function generateNumberArray(begin, end) {
+function generateOptionArray(begin, end) {
   let array = [];
   for (let i = begin; i <= end; i++) {
-    array.push((i < 10 ? '0' : '') + i);
+    array.push({
+      text: (i < 10 ? '0' : '') + i,
+      value: i,
+    });
   }
   return array;
 }
@@ -20,9 +23,9 @@ export default class BirthPicker extends Component {
         day: '12'
       },
       optionGroups: {
-        year: generateNumberArray(1970, 2015),
-        month: generateNumberArray(1, 12),
-        day: generateNumberArray(1, 31)
+        year: generateOptionArray(1970, 2015),
+        month: generateOptionArray(1, 12),
+        day: generateOptionArray(1, 31)
       }
     };
   }
@@ -39,31 +42,31 @@ export default class BirthPicker extends Component {
         if (parseInt(value) % 4 === 0) {
           nextState.optionGroups = {
             ...optionGroups,
-            day: generateNumberArray(1, 29)
+            day: generateOptionArray(1, 29)
           };
         } else {
           nextState.optionGroups = {
             ...optionGroups,
-            day: generateNumberArray(1, 28)
+            day: generateOptionArray(1, 28)
           };
         }
       } else if (name === 'month') {
         if (value === '02') {
           nextState.optionGroups = {
             ...optionGroups,
-            day: generateNumberArray(1, 28)
+            day: generateOptionArray(1, 28)
           };
         } else if (['01', '03', '05', '07', '08', '10', '12'].indexOf(value) > -1 &&
           ['01', '03', '05', '07', '08', '10', '12'].indexOf(valueGroups.month) < 0) {
           nextState.optionGroups = {
             ...optionGroups,
-            day: generateNumberArray(1, 31)
+            day: generateOptionArray(1, 31)
           };
         } else if (['01', '03', '05', '07', '08', '10', '12'].indexOf(value) < 0 &&
           ['01', '03', '05', '07', '08', '10', '12'].indexOf(valueGroups.month) > -1) {
           nextState.optionGroups = {
             ...optionGroups,
-            day: generateNumberArray(1, 30)
+            day: generateOptionArray(1, 30)
           };
         }
       }
