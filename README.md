@@ -36,7 +36,7 @@ var Picker = require('react-mobile-picker');
 
 | Property name | Type | Default | Description |
 | ------------- | ---- | ------- | ----------- |
-| optionGroups | Object | N/A | Key-value pairs as `{name1: options1, name2: options2}`. `options` is an array of all options for this name. |
+| optionGroups | Object | N/A | Key-value pairs as `{name1: options1, name2: options2}`. `options` is an array or Key-value pairs as `{text: 'display', value: selectedValue}` of all options. |
 | valueGroups | Object | N/A | Selected value pairs as `{name1: value1, name2: value2}`. |
 | onChange(name, value) | Function | N/A | Callback called when user pick a new value. |
 | itemHeight | Number | 36 | Height of each item (that is each option). In `px`. |
@@ -64,7 +64,13 @@ class App extends Component {
       optionGroups: {
         title: ['Mr.', 'Mrs.', 'Ms.', 'Dr.'],
         firstName: ['John', 'Micheal', 'Elizabeth'],
-        secondName: ['Lennon', 'Jackson', 'Jordan', 'Legend', 'Taylor']
+        secondName: [
+          { text: 'Lennon', value: 'Lennon'}, 
+          { text: 'Jackson', value: 'Jackson'}, 
+          { text: 'Jordan', value: 'Jordan'}, 
+          { text: 'Legend', value: 'Legend'}, 
+          { text: 'Taylor', value: 'Taylor'}
+        ]
       }
     };
   }
