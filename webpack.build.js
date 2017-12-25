@@ -26,6 +26,7 @@ module.exports = {
       amd: 'react-dom',
       umd: 'react-dom',
     },
+    'prop-types': true,
   },
 
   module: {
@@ -37,15 +38,5 @@ module.exports = {
 
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false
-      }
-    })
   ]
 };
