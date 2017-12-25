@@ -1,6 +1,6 @@
 {
   "name": "@byhealth/react-mobile-picker",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "An iOS like select box component for React",
   "main": "lib/react-mobile-picker.js",
   "repository": {
