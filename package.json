@@ -1,0 +1,50 @@
+{
+  "name": "@byhealth/react-mobile-picker",
+  "version": "1.0.0-alpha.1",
+  "description": "React Mobile Picker Component",
+  "main": "dist/react-mobile-picker.min.js",
+  "module": "dist/mjs/index.js",
+  "types": "dist/mjs/index.d.ts",
+  "scripts": {
+    "build": "npm run build:cjs && npm run build:mjs",
+    "build:cjs": "rollup -c rollup.config.ts",
+    "build:mjs": "tsc -p tsconfig.json",
+    "clean": "rimraf build dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/by-healthFED/react-mobile-picker.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "react",
+    "react mobile picker",
+    "mobile picker",
+    "picker"
+  ],
+  "dependencies": {
+    "tslib": "^1.9.0"
+  },
+  "devDependencies": {
+    "@types/react": "^15.5.1",
+    "@types/react-dom": "^15.5.1",
+    "react": "^15.5.1",
+    "react-dom": "^15.5.1",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.67.4",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-typescript2": "^0.18.1",
+    "rollup-plugin-uglify": "^6.0.0",
+    "tslint": "^5.11.0",
+    "typescript": "^3.2.2"
+  },
+  "peerDependencies": {
+    "react": "^15.5.1 || ^16.0.0",
+    "react-dom": "^15.5.1 || ^16.0.0"
+  },
+  "author": "pengxp <pengxp@by-health.com>",
+  "license": "MIT"
+}

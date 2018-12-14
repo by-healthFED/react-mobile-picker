@@ -10,6 +10,11 @@
 # Test coverage
 coverage
 
+# Runtime data
+.rpt2_cache
+package-lock.json
+yarn.lock
+
 # Logs
 npm-debug.log*
 yarn-error.log*
