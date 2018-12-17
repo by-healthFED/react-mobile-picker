@@ -7,6 +7,11 @@
 /build
 /dist
 
+# Runtime cache
+.rpt2_cache
+package-lock.json
+yarn.lock
+
 # Test coverage
 coverage
 

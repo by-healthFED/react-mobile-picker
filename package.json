@@ -1,0 +1,42 @@
+{
+  "name": "@byhealth/react-mobile-picker",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/react-mobile-picker.js",
+  "module": "dist/react-mobile-picker.esm.js",
+  "types": "dist/react-mobile-picker.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/by-healthFED/react-mobile-picker.git"
+  },
+  "keywords": [
+    "react",
+    "react mobile picker",
+    "mobile picker",
+    "picker"
+  ],
+  "dependencies": {
+    "tslib": "^1.9.0"
+  },
+  "devDependencies": {
+    "@types/react": "^15.5.1",
+    "@types/react-dom": "^15.5.1",
+    "react": "^15.5.1",
+    "react-dom": "^15.5.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.2.2"
+  },
+  "peerDependencies": {
+    "react": "^15.5.1 || ^16.0.0",
+    "react-dom": "^15.5.1 || ^16.0.0"
+  },
+  "author": "pengxp <pengxp@by-health.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/by-healthFED/react-mobile-picker/issues"
+  },
+  "homepage": "https://github.com/by-healthFED/react-mobile-picker#readme"
+}
