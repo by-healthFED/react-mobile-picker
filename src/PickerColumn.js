@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { findIndex } from './utils';
 
 class PickerColumn extends React.Component {
+  refScroll = null;
+
   static propTypes = {
     options: PropTypes.arrayOf(PropTypes.shape({
       text: PropTypes.string.isRequired,
@@ -25,11 +27,27 @@ class PickerColumn extends React.Component {
     };
   }
 
+  componentDidMount() {
+    const { refScroll } = this;
+    refScroll.addEventListener("touchstart", this.handleTouchStart, false);
+    refScroll.addEventListener("touchmove", this.handleTouchMove, false);
+    refScroll.addEventListener("touchend", this.handleTouchEnd, false);
+    refScroll.addEventListener("touchcancel", this.handleTouchCancel, false);
+  }
+
   componentWillReceiveProps(nextProps) {
     if (this.state.isMoving) {
       return;
     }
     this.setState(this.computeTranslate(nextProps));
+  }
+
+  componentWillUnmount() {
+    const { refScroll } = this;
+    refScroll.removeEventListener("touchstart", this.handleTouchStart, false);
+    refScroll.removeEventListener("touchmove", this.handleTouchMove, false);
+    refScroll.removeEventListener("touchend", this.handleTouchEnd, false);
+    refScroll.removeEventListener("touchcancel", this.handleTouchCancel, false);
   }
 
   computeTranslate = (props) => {
@@ -166,10 +184,8 @@ class PickerColumn extends React.Component {
         <div
           className="picker-scroller"
           style={style}
-          onTouchStart={this.handleTouchStart}
-          onTouchMove={this.handleTouchMove}
-          onTouchEnd={this.handleTouchEnd}
-          onTouchCancel={this.handleTouchCancel}>
+          ref={ref => this.refScroll = ref}
+          >
           {this.renderItems()}
         </div>
       </div>
