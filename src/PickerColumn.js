@@ -167,6 +167,10 @@ class PickerColumn extends React.Component {
     });
   }
 
+  bindRef = ref => {
+    this.refScroll = ref;
+  }
+
   render() {
     const translateString = `translate3d(0, ${this.state.scrollerTranslate}px, 0)`;
     const style = {
@@ -184,7 +188,7 @@ class PickerColumn extends React.Component {
         <div
           className="picker-scroller"
           style={style}
-          ref={ref => this.refScroll = ref}
+          ref={this.bindRef}
           >
           {this.renderItems()}
         </div>
