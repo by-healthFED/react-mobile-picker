@@ -29,10 +29,10 @@ class PickerColumn extends React.Component {
 
   componentDidMount() {
     const { refScroll } = this;
-    refScroll.addEventListener("touchstart", this.handleTouchStart, false);
-    refScroll.addEventListener("touchmove", this.handleTouchMove, false);
-    refScroll.addEventListener("touchend", this.handleTouchEnd, false);
-    refScroll.addEventListener("touchcancel", this.handleTouchCancel, false);
+    refScroll.addEventListener('touchstart', this.handleTouchStart, false);
+    refScroll.addEventListener('touchmove', this.handleTouchMove, false);
+    refScroll.addEventListener('touchend', this.handleTouchEnd, false);
+    refScroll.addEventListener('touchcancel', this.handleTouchCancel, false);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -44,10 +44,10 @@ class PickerColumn extends React.Component {
 
   componentWillUnmount() {
     const { refScroll } = this;
-    refScroll.removeEventListener("touchstart", this.handleTouchStart, false);
-    refScroll.removeEventListener("touchmove", this.handleTouchMove, false);
-    refScroll.removeEventListener("touchend", this.handleTouchEnd, false);
-    refScroll.removeEventListener("touchcancel", this.handleTouchCancel, false);
+    refScroll.removeEventListener('touchstart', this.handleTouchStart, false);
+    refScroll.removeEventListener('touchmove', this.handleTouchMove, false);
+    refScroll.removeEventListener('touchend', this.handleTouchEnd, false);
+    refScroll.removeEventListener('touchcancel', this.handleTouchCancel, false);
   }
 
   computeTranslate = (props) => {
@@ -167,7 +167,7 @@ class PickerColumn extends React.Component {
     });
   }
 
-  bindRef = ref => {
+  bindRef = (ref) => {
     this.refScroll = ref;
   }
 
